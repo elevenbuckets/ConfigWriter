@@ -9,7 +9,7 @@ Utils to write a json config to a config file
 
 First clean and recompile 
 
-`npm clean && npm run compile` 
+`npm run clean && npm run compile && mkdir test_output` 
 
 Then run the test file you like, for exmaple:
 
