@@ -5,6 +5,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# compiled code
+build/
+
+# test output temp files
+test_output/*
+
 # Runtime data
 pids
 *.pid
