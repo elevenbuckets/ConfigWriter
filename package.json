@@ -25,8 +25,8 @@
   "scripts": {
     "postinstall": "npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "./node_modules/.bin/babel src --out-dir build",
-    "clean": "rm -vfr ./core/*.js ./build"
+    "compile": "./node_modules/.bin/babel src/main --out-dir build",
+    "clean": "rm -vfr ./build ./test_output/*"
   },
   "keywords": [],
   "author": "",
