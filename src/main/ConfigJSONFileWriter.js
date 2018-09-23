@@ -1,5 +1,6 @@
 //Main Class
 const fs = require('fs')
+const mkdirp = require('mkdirp')
 
 class ConfigJSONWriter {
     constructor(filePath, allowedFields) {
@@ -12,6 +13,10 @@ class ConfigJSONWriter {
     // If the file exists, it will be overwritten.
     writeJSON = (json) => {
         let allowdJson = {
+        }
+        let dir = this.filePath.substring(0, this.filePath.lastIndexOf("/"));
+        if(!fs.exists(dir)){
+            mkdirp.sync(dir);
         }
         Object.keys(json).map(key => {
             if ((!this.allowedFields) || this.allowedFields.includes(key)) {
