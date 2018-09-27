@@ -15,7 +15,7 @@ class ConfigJSONWriter {
         let allowdJson = {
         }
         let dir = this.filePath.substring(0, this.filePath.lastIndexOf("/"));
-        if(!fs.exists(dir)){
+        if(!fs.existsSync(dir)){
             mkdirp.sync(dir);
         }
         Object.keys(json).map(key => {
@@ -33,7 +33,7 @@ class ConfigJSONWriter {
         if ((this.allowedFields) || (!this.allowedFields.includes(key))) {
             return false;
         }
-        if (!fs.exists(this.filePath)) {
+        if (!fs.existsSync(this.filePath)) {
             this.initFile();
         }
         let jsonString = fs.readFileSync(this.filePath);
